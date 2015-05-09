@@ -22,13 +22,13 @@ Example
     var ffmpeg = require('gulp-fluent-ffmpeg');
 
     gulp.task('audio', function () {
-      // transcode mp3 files to ogg
-      return gulp.src('src/audio/*.mp3')
-        .pipe(ffmpeg('ogg', function (cmd) {
+      // transcode ogg files to mp3
+      return gulp.src('src/audio/*.ogg')
+        .pipe(ffmpeg('mp3', function (cmd) {
           return cmd
             .audioBitrate('128k')
             .audioChannels(2)
             .audioCodec('libmp3lame')
         }))
-        .pipe(gulp.dest('dest/audio'))
+        .pipe(gulp.dest('dest/audio'));
     });
