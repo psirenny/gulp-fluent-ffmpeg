@@ -1,0 +1,35 @@
+{
+  "author": "Dennis Torres <djtorres0@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/psirenny/gulp-fluent-ffmpeg/issues"
+  },
+  "dependencies": {
+    "concat-stream": "^1.4.8",
+    "fluent-ffmpeg": "^2.0.1",
+    "gulp-util": "^3.0.4",
+    "through2": "^0.6.5"
+  },
+  "description": "A fluent ffmpeg plugin for gulp.",
+  "devDependencies": {
+    "stream-equal": "^0.1.5",
+    "tape": "^4.0.0",
+    "vinyl": "^0.4.6"
+  },
+  "homepage": "https://github.com/psirenny/gulp-fluent-ffmpeg#readme",
+  "keywords": [
+    "gulplugin",
+    "fluent",
+    "ffmpeg"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "gulp-fluent-ffmpeg",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psirenny/gulp-fluent-ffmpeg.git"
+  },
+  "scripts": {
+    "test": "node test"
+  },
+  "version": "1.0.0"
+}
