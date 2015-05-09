@@ -2,7 +2,6 @@ var fs = require('fs');
 var plugin = require('..');
 var streamEqual = require('stream-equal');
 var test = require('tape');
-var through2 = require('through2');
 var Vinyl = require('vinyl');
 
 test('plugin', function (t) {
