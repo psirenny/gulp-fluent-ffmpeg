@@ -55,6 +55,7 @@ module.exports = function (format, handler) {
     if (file.isBuffer()) {
       var input = through2();
       var output = concat(function (buf) {
+        if (!Buffer.isBuffer(buf)) buf = null;
         file.contents = buf;
         next();
       });
