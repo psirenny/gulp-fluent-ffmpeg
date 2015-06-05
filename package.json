@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/psirenny/gulp-fluent-ffmpeg#readme",
   "keywords": [
-    "gulplugin",
+    "gulpplugin",
     "fluent",
     "ffmpeg"
   ],
@@ -31,5 +31,5 @@
   "scripts": {
     "test": "node test"
   },
-  "version": "1.0.1"
+  "version": "1.0.2"
 }
