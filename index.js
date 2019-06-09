@@ -1,6 +1,6 @@
 var concat = require('concat-stream');
 var ffmpeg = require('fluent-ffmpeg');
-var gutil = require('gulp-util');
+var PluginError = require('plugin-error');
 var path = require('path');
 var through2 = require('through2');
 
@@ -16,7 +16,7 @@ module.exports = function (format, handler) {
 
   if (!format && !handler) {
     var msg = 'must include a file format, an ffmpeg handler or both';
-    throw new gutil.PluginError('gulp-fluent-ffmpeg', msg);
+    throw new PluginError('gulp-fluent-ffmpeg', msg);
   }
 
   return through2.obj(function (file, enc, callback) {
@@ -34,7 +34,9 @@ module.exports = function (format, handler) {
       if (format) cmd.format(format);
       cmd.input(input);
       cmd.output(output);
-      cmd.on('error', self.emit.bind(this, 'error'));
+      cmd.on('error', function() {
+        self.emit.apply(self, ['error'].concat(Array.prototype.slice.call(arguments)))
+      });
       cmd.run();
     }
 
