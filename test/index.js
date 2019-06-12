@@ -65,6 +65,7 @@ test('stream', function (t) {
   });
 
   stream.on('data', function (destFile) {
+    var input = destFile.contents;
     var output = through2();
 
     ffmpeg()
@@ -74,7 +75,7 @@ test('stream', function (t) {
       .audioBitrate(192)
       .run();
 
-    streamEqual(destFile, output, function (err, equal) {
+    streamEqual(input, output, function (err, equal) {
       t.equal(destFile.path, 'test/fixture.mp3');
       t.error(err);
       t.ok(equal);
