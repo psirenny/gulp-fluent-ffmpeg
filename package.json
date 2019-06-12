@@ -21,7 +21,7 @@
     "fluent",
     "ffmpeg"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "main": "index.js",
   "name": "gulp-fluent-ffmpeg",
   "repository": {
